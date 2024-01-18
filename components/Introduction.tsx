@@ -105,7 +105,7 @@ export default function Introduction() {
               icon={GitHubIcon}
             />
             <SocialLink
-              href={siteMetadata.linkedin}
+              href={siteMetadata.linkedin || ''}
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
