@@ -81,16 +81,16 @@ export default function About() {
         <div className="lg:pl-20">
           <ul>
             <SocialLink href={siteMetadata.twitter as string} icon={XIcon}>
-              Follow on X
+              X'de takip et
             </SocialLink>
             <SocialLink href={siteMetadata.instagram} icon={InstagramIcon} className="mt-4">
-              Follow on Instagram
+              Instagram'da takip et
             </SocialLink>
             <SocialLink href={siteMetadata.github} icon={GitHubIcon} className="mt-4">
-              Follow on GitHub
+              GitHub'da takip et
             </SocialLink>
             <SocialLink href={siteMetadata.linkedin as string} icon={LinkedInIcon} className="mt-4">
-              Follow on LinkedIn
+              LinkedIn'da takip et
             </SocialLink>
             <SocialLink
               href="mailto:spencer@planetaria.tech"
