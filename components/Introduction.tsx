@@ -1,35 +1,131 @@
-import { CheckCircleIcon, InformationCircleIcon } from '@heroicons/react/20/solid'
+import { GitHubIcon, InstagramIcon, LinkedInIcon, XIcon } from '@/components/SocialIcons'
+import Link from 'next/link'
+import clsx from 'clsx'
+import Image from 'next/image'
+
+import { CheckCircleIcon } from '@heroicons/react/20/solid'
+import siteMetadata from '@/data/siteMetadata'
+
+function SocialLink({
+  icon: Icon,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof Link> & {
+  icon: React.ComponentType<{ className?: string }>
+}) {
+  return (
+    <Link className="group -m-1 p-1" {...props}>
+      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+    </Link>
+  )
+}
+
+function AvatarContainer({ className, ...props }: React.ComponentPropsWithoutRef<'div'>) {
+  return (
+    <div
+      className={clsx(
+        className,
+        'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10'
+      )}
+      {...props}
+    />
+  )
+}
+
+function Avatar({
+  large = false,
+  className,
+  ...props
+}: Omit<React.ComponentPropsWithoutRef<typeof Link>, 'href'> & {
+  large?: boolean
+}) {
+  return (
+    <Link href="/" aria-label="Home" className={clsx(className, 'pointer-events-auto')} {...props}>
+      <Image
+        src="/static/images/avatar.jpeg"
+        alt=""
+        sizes={large ? '4rem' : '2.25rem'}
+        className={clsx(
+          'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
+          large ? 'h-16 w-16' : 'h-9 w-9'
+        )}
+        priority
+        width={large ? 64 : 36}
+        height={large ? 64 : 36}
+      />
+    </Link>
+  )
+}
 
 export default function Introduction() {
   return (
-    <div className="bg-white px-6 py-32 lg:px-8">
-      <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
-        <p className="text-base font-semibold leading-7 text-indigo-600">Introducing</p>
-        <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          JavaScript for Beginners
-        </h1>
-        <p className="mt-6 text-xl leading-8">
-          Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi,
-          nibh dui, diam eget aliquam. Quisque id at vitae feugiat egestas ac. Diam nulla orci at in
-          viverra scelerisque eget. Eleifend egestas fringilla sapien.
-        </p>
-        <div className="mt-10 max-w-2xl">
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris
-            semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus
-            viverra tellus varius sit neque erat velit. Faucibus commodo massa rhoncus, volutpat.
-            Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id.
+    <div className="py-4">
+      <div
+        className="top-[var(--avatar-top,theme(spacing.3))] w-full"
+        style={{
+          position: 'var(--header-inner-position)' as React.CSSProperties['position'],
+        }}
+      >
+        <div className="relative">
+          <AvatarContainer
+            className="absolute left-0 top-3 origin-left transition-opacity"
+            style={{
+              opacity: 'var(--avatar-border-opacity, 0)',
+              transform: 'var(--avatar-border-transform)',
+            }}
+          />
+          <Avatar
+            large
+            className="block h-16 w-16 origin-left"
+            style={{ transform: 'var(--avatar-image-transform)' }}
+          />
+        </div>
+      </div>
+      <div className="max-w-3xl py-4 text-base leading-7 text-gray-700">
+        <div className="max-w-2xl">
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+            Hey! This is Ozan, aka Ozzy 👋
+          </h1>
+          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+            I am a software developer and founder based in London.
           </p>
-          <ul role="list" className="mt-8 max-w-xl space-y-8 text-gray-600">
+          <div className="mt-6 flex gap-6">
+            <SocialLink
+              href={siteMetadata.twitter as string}
+              aria-label="Follow on X"
+              icon={XIcon}
+            />
+            <SocialLink
+              href={siteMetadata.instagram}
+              aria-label="Follow on Instagram"
+              icon={InstagramIcon}
+            />
+            <SocialLink
+              href={siteMetadata.github}
+              aria-label="Follow on GitHub"
+              icon={GitHubIcon}
+            />
+            <SocialLink
+              href={siteMetadata.linkedin}
+              aria-label="Follow on LinkedIn"
+              icon={LinkedInIcon}
+            />
+          </div>
+        </div>
+        <div className="mt-5 max-w-2xl dark:text-gray-400">
+          <p className="dark:text-gray-400">I am currently working on: </p>
+          <ul className="mt-8 max-w-xl space-y-8 text-gray-600 dark:text-gray-400">
             <li className="flex gap-x-3">
               <CheckCircleIcon
                 className="mt-1 h-5 w-5 flex-none text-indigo-600"
                 aria-hidden="true"
               />
               <span>
-                <strong className="font-semibold text-gray-900">Data types.</strong> Lorem ipsum,
-                dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit
-                eaque, iste dolor cupiditate blanditiis ratione.
+                <Link href="https://www.hypersaas.dev/">
+                  <strong className="font-semibold text-gray-900 dark:text-gray-400">
+                    HyperSaas.
+                  </strong>{' '}
+                </Link>
+                A SaaS starter with Django, Django Rest Framework and Next.js.
               </span>
             </li>
             <li className="flex gap-x-3">
@@ -38,8 +134,12 @@ export default function Introduction() {
                 aria-hidden="true"
               />
               <span>
-                <strong className="font-semibold text-gray-900">Loops.</strong> Anim aute id magna
-                aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
+                <Link href="https://www.protonstack.dev/">
+                  <strong className="font-semibold text-gray-900 dark:text-gray-400">
+                    ProtonStack.
+                  </strong>
+                </Link>
+                Next.js boilerplae with TypeScript, Tailwind CSS, Clerk.dev, Prisma.
               </span>
             </li>
             <li className="flex gap-x-3">
@@ -48,82 +148,15 @@ export default function Introduction() {
                 aria-hidden="true"
               />
               <span>
-                <strong className="font-semibold text-gray-900">Events.</strong> Ac tincidunt sapien
-                vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.
+                <Link href="https://github.com/tyrozz/next-js-boilerplate">
+                  <strong className="font-semibold text-gray-900 dark:text-gray-400">
+                    next-js-boilerplate.
+                  </strong>
+                </Link>
+                A streamlined and feature-rich open source boilerplate for Next.js.
               </span>
             </li>
           </ul>
-          <p className="mt-8">
-            Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit
-            molestie auctor fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris
-            varius vulputate et ultrices hac adipiscing egestas. Iaculis convallis ac tempor et ut.
-            Ac lorem vel integer orci.
-          </p>
-          <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
-            From beginner to expert in 3 hours
-          </h2>
-          <p className="mt-6">
-            Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat in. Convallis arcu
-            ipsum urna nibh. Pharetra, euismod vitae interdum mauris enim, consequat vulputate nibh.
-            Maecenas pellentesque id sed tellus mauris, ultrices mauris. Tincidunt enim cursus
-            ridiculus mi. Pellentesque nam sed nullam sed diam turpis ipsum eu a sed convallis diam.
-          </p>
-          <figure className="mt-10 border-l border-indigo-600 pl-9">
-            <blockquote className="font-semibold text-gray-900">
-              <p>
-                “Vel ultricies morbi odio facilisi ultrices accumsan donec lacus purus. Lectus nibh
-                ullamcorper ac dictum justo in euismod. Risus aenean ut elit massa. In amet aliquet
-                eget cras. Sem volutpat enim tristique.”
-              </p>
-            </blockquote>
-            <figcaption className="mt-6 flex gap-x-4">
-              <img
-                className="h-6 w-6 flex-none rounded-full bg-gray-50"
-                src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                alt=""
-              />
-              <div className="text-sm leading-6">
-                <strong className="font-semibold text-gray-900">Maria Hill</strong> – Marketing
-                Manager
-              </div>
-            </figcaption>
-          </figure>
-          <p className="mt-10">
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris
-            semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus
-            viverra tellus varius sit neque erat velit.
-          </p>
-        </div>
-        <figure className="mt-16">
-          <img
-            className="aspect-video rounded-xl bg-gray-50 object-cover"
-            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&w=1310&h=873&q=80&facepad=3"
-            alt=""
-          />
-          <figcaption className="mt-4 flex gap-x-2 text-sm leading-6 text-gray-500">
-            <InformationCircleIcon
-              className="mt-0.5 h-5 w-5 flex-none text-gray-300"
-              aria-hidden="true"
-            />
-            Faucibus commodo massa rhoncus, volutpat.
-          </figcaption>
-        </figure>
-        <div className="mt-16 max-w-2xl">
-          <h2 className="text-2xl font-bold tracking-tight text-gray-900">
-            Everything you need to get up and running
-          </h2>
-          <p className="mt-6">
-            Purus morbi dignissim senectus mattis adipiscing. Amet, massa quam varius orci dapibus
-            volutpat cras. In amet eu ridiculus leo sodales cursus tristique. Tincidunt sed tempus
-            ut viverra ridiculus non molestie. Gravida quis fringilla amet eget dui tempor
-            dignissim. Facilisis auctor venenatis varius nunc, congue erat ac. Cras fermentum
-            convallis quam.
-          </p>
-          <p className="mt-8">
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris
-            semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus
-            viverra tellus varius sit neque erat velit.
-          </p>
         </div>
       </div>
     </div>
