@@ -83,10 +83,10 @@ export default function Introduction() {
       <div className="max-w-3xl py-4 text-base leading-7 text-gray-700">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Hey! This is Ozan, aka Ozzy 👋
+            Merhaba, ben Ozan Yildirim 👋
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I am a software developer and founder based in London.
+            Londra'da yaşayan bir yazılım geliştiriciyim.{' '}
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
@@ -112,7 +112,7 @@ export default function Introduction() {
           </div>
         </div>
         <div className="mt-5 max-w-2xl dark:text-gray-400">
-          <p className="dark:text-gray-400">I am currently working on: </p>
+          <p className="dark:text-gray-400">Şu anda üzerinde çalıştığım projeler: </p>
           <ul className="mt-8 max-w-xl space-y-8 text-gray-600 dark:text-gray-400">
             <li className="flex gap-x-3">
               <CheckCircleIcon
@@ -125,7 +125,7 @@ export default function Introduction() {
                     HyperSaas.
                   </strong>{' '}
                 </Link>
-                A SaaS starter with Django, Django Rest Framework and Next.js.
+                Django, Django Rest Framework ve Next.js ile hazırlanmış bir SaaS boilerplate.
               </span>
             </li>
             <li className="flex gap-x-3">
@@ -139,7 +139,8 @@ export default function Introduction() {
                     ProtonStack.
                   </strong>
                 </Link>
-                Next.js boilerplae with TypeScript, Tailwind CSS, Clerk.dev, Prisma.
+                TypeScript, Tailwind CSS, Clerk.dev, Prisma ile Next.js için hazırlanmış bir
+                boilerplate.
               </span>
             </li>
             <li className="flex gap-x-3">
@@ -153,7 +154,7 @@ export default function Introduction() {
                     next-js-boilerplate.
                   </strong>
                 </Link>
-                A streamlined and feature-rich open source boilerplate for Next.js.
+                Açık kaynaklı bir Next.js boilerplate.
               </span>
             </li>
           </ul>

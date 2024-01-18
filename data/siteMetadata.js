@@ -1,10 +1,9 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Ozan Yildirim Personal Blog',
+  title: 'Ozan Yildirim Kişisel Blog',
   author: 'Ozan Yildirim',
   headerTitle: 'Ozan Yildirim',
-  description:
-    'Personal blog by Ozan Yildirim. I explain my thoughts and ideas about software engineering, product management, and entrepreneurship.',
+  description: 'Kişisel blog sayfam',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://www.ozanyildirim.me/',

@@ -63,36 +63,17 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            I’m Ozan Yildirim, Software Engineer based in London.
+            Merhaba, ben Ozan Yildirim. 👋
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              Hello and welcome! I'm Ozan Yildirim, a dedicated Full Stack Developer and Machine
-              Learning enthusiast. My academic journey in Mathematics and Computer Science has laid
-              a solid foundation for my career, equipping me with analytical skills and a strategic
-              approach to problem-solving.
-            </p>
-            <p>
-              My professional path is marked by a keen interest in both software development and
-              data science. I've embraced roles that blend these domains, from Full Stack Software
-              Development to Data Science Developer. This experience has sharpened my expertise in
-              languages like Python and JavaScript, and in frameworks such as Django and
-              React/Next.js, while deepening my appreciation for the transformative role of
-              technology in both business and social contexts.
-            </p>
-            <p>
-              Beyond coding, I am fascinated by the intersection of technology and economics and how
-              it shapes our global landscape. My goal is to contribute meaningful, technologically
-              advanced solutions that are economically sound and socially beneficial.
-            </p>
-            <p>
-              I invite you to join me in exploring the dynamic and ever-evolving world of
-              technology. Whether you're a tech enthusiast, a potential collaborator, or simply
-              curious about software and data, I hope to inspire and engage you on this platform!
+              Matematik ve Bilgisayar Bilimleri alanlarında eğitimimi tamamladım. Şu anda Londra'da
+              yaşayan bir yazılım geliştiriciyim. İlgilendigim alanlar arasında veri bilimi, makine
+              öğrenmesi ve yazılım mühendisliği bulunmakta.
             </p>
             <Link href="/projects">
               <p className="py-4 text-sm font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
-                Check what I am working on currently →{' '}
+                Şu anda üzerinde çalıştığım projeler →{' '}
               </p>
             </Link>
           </div>
