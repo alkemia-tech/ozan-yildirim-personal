@@ -71,7 +71,7 @@ export default function About() {
               yaşayan bir yazılım geliştiriciyim. İlgilendigim alanlar arasında veri bilimi, makine
               öğrenmesi ve yazılım mühendisliği bulunmakta.
             </p>
-            <Link href="/projects">
+            <Link href="/projeler">
               <p className="py-4 text-sm font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
                 Şu anda üzerinde çalıştığım projeler →{' '}
               </p>
