@@ -137,7 +137,7 @@ export default function Introduction() {
                 <Link href="https://www.protonstack.dev/">
                   <strong className="font-semibold text-gray-900 dark:text-gray-400">
                     ProtonStack.
-                  </strong>
+                  </strong>{' '}
                 </Link>
                 Next.js boilerplae with TypeScript, Tailwind CSS, Clerk.dev, Prisma.
               </span>
@@ -151,7 +151,7 @@ export default function Introduction() {
                 <Link href="https://github.com/tyrozz/next-js-boilerplate">
                   <strong className="font-semibold text-gray-900 dark:text-gray-400">
                     next-js-boilerplate.
-                  </strong>
+                  </strong>{' '}
                 </Link>
                 A streamlined and feature-rich open source boilerplate for Next.js.
               </span>
