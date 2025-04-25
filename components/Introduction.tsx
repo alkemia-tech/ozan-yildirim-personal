@@ -83,7 +83,7 @@ export default function Introduction() {
       <div className="max-w-3xl py-4 text-base leading-7 text-gray-700">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Hey! This is Ozan, aka Ozzy 👋
+            Hey! This is Ozan. 👋
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             I am a software developer and founder based in London.
